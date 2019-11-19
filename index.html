@@ -1,14 +1,41 @@
 <html>
   <body>
-    <h1>D3 Layouts</h1>
-    <br>
-    <ol>
-      <li>Pie Layout: </li>
-      <li>Stack Layout: </li>
-      <li>Force Layout: </li>
-    </ol>
+    <h1>🥳D3 Layouts🥳</h1>
     <br>
     <h2>What do all of these have in common?</h2>
-    <p>They all use...</p>
+    <p>The process in order to create these layouts in your code are very similar. First, you manipulate your data in order
+       to make it useable for the layout you want to use. Then, you create your layout with the d3 algorithim that is specific
+       to your layout. And finally, you edit your creation so that it is easier to read and understand. The following are the
+       specifics for each layout Murray describes.</p>
+    <br>
+    <ul>
+      <li>Pie Layout: 
+            <ol>
+              <li>Using d3.pie(), transform your array of data into an array that contains objects with the specific region 
+                  of the pie chart that each object is supposed to use to represent the data from your original array.</li>
+              <li>Define the demensions of your SVG and use d3.arc() to genrate the paths of the data. Then, create an SVG, 
+                  set up the groups, and draw your paths.</li>
+              <li>Insert text to indicate what numerical value each of your wedges in your pie chart represents. Also, you 
+                  can adjust the inner radius for your chart to make it look like a donut.</li>
+            </ol>
+        </li>
+      <li>Stack Layout: 
+            <ol>
+                <li>Using d3.stack and .keys, initialize your stack function with your desired categories/keys. Then, call 
+                    your stack funtion with your dataset.</li>
+                <li>Create an SVG and set up your groups. Then, insert rectangles in the SVG to represent your dataset.</li>
+                <li>Use .order() to rearrange your categories in a specific way. Also, you can do this with area graphs too.
+                    When you bind the datum to your paths, you give it a class attribute of area and a data attribute of area.</li>
+            </ol>
+        </li>
+      <li>Force Layout: 
+            <ol>
+              <li>Define the force layout using the nodes and the edges in your dataset.</li>
+              <li>Create edges in your SVG by the dataset.edges to append lines. Then, create your circles using the nodes.</li>
+              <li>You can add a tooltip to each of the nodes. Also, you can make the nodes dragable so that users can rearrange
+                  the nodes in any way they like.</li>
+            </ol>
+        </li>
+    </ul>
   </body>
 </html>
